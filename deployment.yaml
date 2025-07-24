@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-eyego-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-eyego-app
+  template:
+    metadata:
+      labels:
+        app: node-eyego-app
+    spec:
+      containers:
+      - name: node-eyego-container
+        image: 462695953325.dkr.ecr.us-east-1.amazonaws.com/node-eyego-app
+        ports:
+        - containerPort: 3000
+
+
